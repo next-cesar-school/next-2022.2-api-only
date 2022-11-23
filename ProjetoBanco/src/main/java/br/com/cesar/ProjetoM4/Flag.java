@@ -1,8 +1,22 @@
 package br.com.cesar.ProjetoM4;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "FL_FLAG")
 public class Flag {
 	
+	@Id 
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="FLAG_ID", nullable=false)
 	private String idFlag;
+	
+	@Column(name="FLAG_CLASSIFICACAO")
 	private String classificacao;
 	
 	public Flag() {

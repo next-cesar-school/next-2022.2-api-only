@@ -1,11 +1,32 @@
 package br.com.cesar.ProjetoM4;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "USR_USUARIO")
 public class Usuario {
 	
+	@Id 
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="USUARIO_ID", nullable=false)
 	public int idFuncionario;
+
+	@Column(name="USUARIO_NOME")
 	public String nomeFuncionario;
+
+	@Column(name="USUARIO_MATRICULA")
 	public long matricula;
+
+	@Column(name="USUARIO_STATUS")
 	public boolean status;
+
+	@Column(name="USUARIO_GERENTE")
+	public boolean gerente;
 	
 	public Usuario() {
 	}

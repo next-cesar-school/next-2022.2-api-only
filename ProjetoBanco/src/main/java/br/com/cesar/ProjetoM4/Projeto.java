@@ -1,16 +1,41 @@
 package br.com.cesar.ProjetoM4;
 
 import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "PJT_PROJETO")
 public class Projeto {
-	
+
+	@Id 
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="PROJETO_ID", nullable=false)
 	private String idProjeto;
+
+	@Column(name="PROJETO_NOME")
 	private String nomeProjeto;
+
+	@Column(name="PROJETO_DATA_INICIO")
 	private Date dataInicio;
+
+	@Column(name="PROJETO_DATA_TERMINO")
 	private Date dataTermino;
+
+	@Column(name="PROJETO_RESPONSAVEL")
 	private Usuario funcionario;
+
+	@Column(name="PROJETO_STATUS")
 	private Status status;
+
+	@Column(name="PROJETO_FLAG")
 	private Flag flag;
+	
+	@Column(name="PROJETO_CENTRO_CUSTO")
 	private CentroCusto centroDeCusto;
 	
 
