@@ -1,13 +1,13 @@
-package com.m4.ProjetoBanco;
+package br.com.cesar.ProjetoM4;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ProjetoBancoApplication {
+public class ProjetoM4Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ProjetoBancoApplication.class, args);
+		SpringApplication.run(ProjetoM4Application.class, args);
 	}
 
 }
