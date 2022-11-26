@@ -15,7 +15,7 @@ public class Projeto {
 	@Id 
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="PROJETO_ID", nullable=false)
-	private String idProjeto;
+	private long idProjeto;
 
 	@Column(name="PROJETO_NOME")
 	private String nomeProjeto;
@@ -26,16 +26,20 @@ public class Projeto {
 	@Column(name="PROJETO_DATA_TERMINO")
 	private Date dataTermino;
 
-	@Column(name="PROJETO_RESPONSAVEL")
+	@ManyToOne()
+	@JoinColumn(name="USUARIO_NOME", referencedColumnName = "USUARIO")
 	private Usuario funcionario;
 
-	@Column(name="PROJETO_STATUS")
+	@ManyToOne()
+	@JoinColumn(name="STATUS_STATUS", referencedColumnName = "STATUS")
 	private Status status;
 
-	@Column(name="PROJETO_FLAG")
+	@ManyToOne()
+	@JoinColumn(name="FLAG_CLASSIFICACAO", referencedColumnName = "FLAG")
 	private Flag flag;
 	
-	@Column(name="PROJETO_CENTRO_CUSTO")
+	@ManyToOne()
+	@JoinColumn(name="CUSTO_NOME_CUSTEADOR", referencedColumnName = "CUSTO")
 	private CentroCusto centroDeCusto;
 	
 
@@ -50,7 +54,7 @@ public class Projeto {
 	public Projeto() {
 	}
 
-	public Projeto(String idProjeto, String nomeProjeto, Date dataInicio, Date dataTermino, Usuario funcionario,
+	public Projeto(long idProjeto, String nomeProjeto, Date dataInicio, Date dataTermino, Usuario funcionario,
 			Status status, Flag flag, CentroCusto centroDeCusto) {
 		this.idProjeto = idProjeto;
 		this.nomeProjeto = nomeProjeto;
@@ -62,11 +66,11 @@ public class Projeto {
 		this.centroDeCusto = centroDeCusto;
 	}
 
-	public String getIdProjeto() {
+	public long getIdProjeto() {
 		return idProjeto;
 	}
 
-	public void setIdProjeto(String idProjeto) {
+	public void setIdProjeto(long idProjeto) {
 		this.idProjeto = idProjeto;
 	}
 

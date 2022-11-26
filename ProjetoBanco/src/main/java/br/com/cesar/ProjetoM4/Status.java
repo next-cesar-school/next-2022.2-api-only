@@ -31,10 +31,6 @@ public class Status {
 		return idStatus;
 	}
 
-	public void setIdStatus(String idStatus) {
-		this.idStatus = idStatus;
-	}
-
 	public String getStatus() {
 		return status;
 	}

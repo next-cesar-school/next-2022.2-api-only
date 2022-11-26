@@ -14,7 +14,7 @@ public class Usuario {
 	@Id 
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="USUARIO_ID", nullable=false)
-	public int idFuncionario;
+	public long idFuncionario;
 
 	@Column(name="USUARIO_NOME")
 	public String nomeFuncionario;
@@ -31,19 +31,16 @@ public class Usuario {
 	public Usuario() {
 	}
 	
-	public Usuario(int idFuncionario, String nomeFuncionario, long matricula, boolean status) {
+	public Usuario(long idFuncionario, String nomeFuncionario, long matricula, boolean status, boolean gerente) {
 		this.idFuncionario = idFuncionario;
 		this.nomeFuncionario = nomeFuncionario;
 		this.matricula = matricula;
 		this.status = status;
+		this.gerente = gerente;
 	}
 
 	public long getMatricula() {
 		return matricula;
-	}
-
-	public void setMatricula(long matricula) {
-		this.matricula = matricula;
 	}
 
 	public boolean isStatus() {
@@ -54,12 +51,11 @@ public class Usuario {
 		this.status = status;
 	}
 
-	public int getIdFuncionario() {
+	public long getIdFuncionario() {
 		return idFuncionario;
 	}
 
-
-	public void setIdFuncionario(int idFuncionario) {
+	public void setIdFuncionario(long idFuncionario) {
 		this.idFuncionario = idFuncionario;
 	}
 
@@ -72,10 +68,4 @@ public class Usuario {
 	public void setNomeFuncionario(String nomeFuncionario) {
 		this.nomeFuncionario = nomeFuncionario;
 	}
-
-	public void UsuarioG(int idFuncionario2, String nomeFuncionario2, boolean gerente, long matricula2,
-			boolean status2) {
-		
-	}
-
 }
