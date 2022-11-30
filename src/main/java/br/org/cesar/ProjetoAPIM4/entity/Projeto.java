@@ -1,34 +1,31 @@
 package br.org.cesar.ProjetoAPIM4.entity;
 
 import java.util.Date;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-// import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.GenerationType;
 
 @Entity
 public class Projeto {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long idProjeto;
     private String nomeProjeto;
     private Date dataInicio;
     private Date dataTermino;
     private Status status;
     private Flag flag;
+ 
     
     @ManyToOne
-    // @JoinColumn(name="USUARIO", referencedColumnName = "idFuncionario")
-    // @org.hibernate.annotations.ForeignKey(name = "usuario_id")
     private Usuario usuario;
 
     @ManyToOne
     private CentroCusto centroDeCusto;
 
-    
+   
     public Projeto() {
     }
 

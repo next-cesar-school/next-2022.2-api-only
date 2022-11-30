@@ -4,21 +4,18 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-// import javax.persistence.OneToMany;
 
 @Entity
 public class Usuario {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long idFuncionario;
     private String nomeFuncionario;
     private long matricula;
     private boolean status;
     private boolean gerente;
     
-    // @OneToMany
-    // private Projeto projeto;
-
+    
     public Usuario() {
     }
 
